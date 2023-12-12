@@ -1,0 +1,23 @@
+<% include ./partials/header.ejs %>
+    <div class="w-full min-h-screen bg-zinc-800 px-10 py-8 text-black">
+        <div class="card w-2/6 mx-auto bg-slate-50 p-4 rounded-lg flex flex-col">
+            <div class="w-full h-auto bg-sky-200 rounded-lg overflow-hidden">
+                <img class="w-full h-2/6 object-cover"
+                    src="/images/uploads/<%= post.image %>" alt="">
+            </div>
+            <h1 class="mt-2 text-4xl"><%= post.tittle %></h1>
+            <h6 class="mt-1 text-xs px-1 opacity-60">by @<%=post.user.username %></h6>
+            <p class="mt-1 px-1 text-zinc-800"><%= post.description %></p>
+
+            <!-- Buttons -->
+            <% if(user && post.user._id.equals(user._id)) { %>
+                <div class="mt-4 flex place-content-evenly">
+                    <a href="/edit/post/<%= post._id %>" class="bg-blue-500 text-white px-4 py-2 rounded-md">Edit</a>
+                    <form action="/delete/post/<%= post._id %>" method="post">
+                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                    </form>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <% include ./partials/footer.ejs %>
