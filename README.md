@@ -42,3 +42,4 @@ This web application is a dynamic platform inspired by Pinterest, enabling users
 4. Edit or delete your own posts from the profile.
 
 Feel free to fork and modify this project for your own use.
+"# Pinterest" 
